@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>plexWatch</Name>
+  <Description>
+    Notify and Log watched content on a Plex Media Server[br][br]
+    [b][span style='color: #E80000;']Directions:[/span][/b][br]
+    [b]/plexWatch[/b] : in this path, plexWatch will store it's configuration files.[br]
+    [b]/logs[/b] : in this path plexWatch will store it's logs.
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/esvinson/plexwatch/</Registry>
+  <GitHub>https://github.com/esvinson/plexWatch</GitHub>
+  <Repository>esvinson/plexwatch</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>EDGE</Name>
+      <Value>1</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort></ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8082</HostPort>
+        <ContainerPort>8082</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/plex/library/Application Support/Plex Media Server/Logs</HostDir>
+      <ContainerDir>/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/plexWatch</HostDir>
+      <ContainerDir>/plexWatch</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8082]/plexWatch</WebUI>
+  <Banner>http://i.imgur.com/aXdzX1v.png</Banner>
+  <Icon>http://i.imgur.com/aXdzX1v.png</Icon>
+</Container>
