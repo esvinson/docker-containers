@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>mylar</Name>
+  <Description>
+    mylar - Comic books
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/lonix/mylar/</Registry>
+  <GitHub>https://bitbucket.org/lonix/mylar.git</GitHub>
+  <Repository>lonix/mylar</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+  </Environment>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort></ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mylar</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/sabnzbd/Downloads/complete/Books/</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/books/</HostDir>
+      <ContainerDir>/comics</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8090]/</WebUI>
+  <Banner>http://i.imgur.com/lhuw0VM.png</Banner>
+  <Icon>http://i.imgur.com/lhuw0VM.png</Icon>
+</Container>
